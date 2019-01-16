@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/content_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_sssqx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_sssqx"
+                android:textColor="#4d4f4e" />
+
+            <TextView
+                android:id="@+id/efb_sssqx"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_sssqx"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_sssqx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khsspq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_supq"
+                android:textColor="#4d4f4e" />
+
+            <TextView
+                android:id="@+id/efb_khsspq"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khsspq"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_khsspq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_bzr"
+                android:textColor="#4d4f4e" />
+
+            <TextView
+                android:id="@+id/efb_khwd"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khwd"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_khwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_dyxz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_dyxz"
+                android:textColor="#4d4f4e" />
+
+            <TextView
+                android:id="@+id/efb_dyxz"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_dyxz"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khxm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_kfxm"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/efb_khxm"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khxm"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khsj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_kfdh"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/efb_khsj"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khsj"
+                android:phoneNumber="true"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_khsj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khdx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_khdx"
+                android:textColor="#4d4f4e" />
+
+            <CheckBox
+                android:id="@+id/efb_khdx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khdx"
+                android:checked="true" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_khdz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_khdz"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/efb_khdz"
+                style="@style/edittext_sty"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_khdz"
+                android:singleLine="true"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_khdz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_bwnr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_gzxx"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/efb_bwnr"
+                style="@style/edittext_sty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_bwnr"
+                android:textColor="#ff0190eb" />
+
+            <TextView
+                android:id="@+id/eefb_bwnr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:text="@string/_xin" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:id="@+id/fb_bz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_bz"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/efb_bz"
+                style="@style/edittext_sty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/fb_bz"
+                android:textColor="#ff0190eb" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <RelativeLayout
+            style="@style/tablerow_sty"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/textV64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/t_servicepeople"
+                android:textColor="#4d4f4e" />
+
+            <EditText
+                android:id="@+id/et_servicepeople"
+                style="@style/edittext_sty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/textV64" />
+
+            <ImageView
+                android:id="@+id/ewmd"
+                style="@style/text_image"
+                android:contentDescription="@string/todo" />
+        </RelativeLayout>
+
+        <View style="@style/view_sty" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+
+        <include
+            android:id="@+id/include_botto"
+            layout="@layout/bottom_button" />
+    </LinearLayout>
+
+</ScrollView>

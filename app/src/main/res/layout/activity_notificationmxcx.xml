@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/content_bg"
+    tools:ignore="SelectableText" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6.0dip"
+                android:shrinkColumns="1"
+                android:layout_marginRight="6.0dip" >
+
+                <TableRow android:layout_marginTop="6.0dip" >
+
+                    <TextView
+                        style="@style/blacktext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报障信息" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="4.0dip" >
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报 障 人:" />
+
+                    <TextView
+                        android:id="@+id/text_fy1"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报障时间:" />
+
+                    <TextView
+                        android:id="@+id/text_fy5"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="故障现象:" />
+
+                    <TextView
+                        android:id="@+id/text_jkje"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="报障人电话:" />
+
+                    <TextView
+                        android:id="@+id/text_fy2"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="移动报障时间:" />
+
+                    <TextView
+                        android:id="@+id/text_ydbzsj"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="规定预约时间:" />
+
+                    <TextView
+                        android:id="@+id/text_gdyysj"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_marginTop="6.0dip"
+                    android:background="#ffb8b8b8" />
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/blacktext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6.0dip"
+                        android:text="工单信息" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="4.0dip" >
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="提醒标识:" />
+
+                    <TextView
+                        android:id="@+id/text_txbs"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="派工单号:" />
+
+                    <TextView
+                        android:id="@+id/text_mxh"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前时间:" />
+
+                    <TextView
+                        android:id="@+id/text_dqsj"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="所属小区:" />
+
+                    <TextView
+                        android:id="@+id/text_khbm"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="业务性质:" />
+
+                    <TextView
+                        android:id="@+id/text_dqlj"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="宽带帐号:" />
+
+                    <TextView
+                        android:id="@+id/text_kdzh"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="详细地址:" />
+
+                    <TextView
+                        android:id="@+id/text_khxxdz"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="提醒内容:" />
+
+                    <TextView
+                        android:id="@+id/text_txzd"
+                        style="@style/content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+            </TableLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="15.0dip" />
+
+            <include
+                android:id="@+id/include_botto"
+                layout="@layout/bottom_button" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

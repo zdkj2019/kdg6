@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fwlx"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/content_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="服务类型:" />
+
+        <EditText
+            android:id="@+id/sp_fwlx"
+            style="@style/edittext_sty"
+            android:layout_toLeftOf="@+id/gfds"
+            android:layout_toRightOf="@+id/add" />
+
+        <ImageView 
+            android:id="@+id/gfds"
+            style="@style/text_image" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/gzlx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="故障类型:" />
+
+        <Spinner
+            android:id="@+id/sp_gzlx"
+            style="@style/edittext_sty"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/gzlx_ff"
+            android:layout_toRightOf="@+id/gzlx"
+            />
+
+        <ImageView 
+            android:id="@+id/gzlx_ff"
+            style="@style/text_image" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/fwry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="服务人员:" />
+
+        <TextView
+            android:id="@+id/tv_fwry"
+            style="@style/edittext_sty"
+            android:layout_toRightOf="@+id/fwry" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/fwfylx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="服务费用类型:" />
+
+        <EditText
+            android:id="@+id/sp_fwfylx"
+            style="@style/edittext_sty"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/fwfylx" />
+
+          <ImageView style="@style/text_image" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/ddsj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="到达时间:" />
+
+        <TextView
+            android:id="@+id/tv_ddsj"
+            style="@style/edittext_sty"
+            android:layout_toRightOf="@+id/ddsj"
+            android:text="0001" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/cljg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="处理结果:" />
+
+        <EditText
+            android:id="@+id/sp_cljg"
+            style="@style/edittext_sty"
+            android:layout_toLeftOf="@+id/ssds"
+            android:layout_toRightOf="@+id/cljg" />
+
+        <ImageView 
+            android:id="@+id/ssds"
+            style="@style/text_image" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <RelativeLayout style="@style/tablerow_sty" >
+
+        <TextView
+            android:id="@+id/rgfy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="人工费用:" />
+
+        <EditText
+            android:id="@+id/et_rgfy"
+            style="@style/edittext_sty"
+            android:layout_toLeftOf="@+id/dsdv"
+            android:layout_toRightOf="@+id/rgfy" />
+
+        <ImageView 
+            android:id="@+id/dsdv"
+            style="@style/text_image" />
+    </RelativeLayout>
+
+    <View style="@style/view_sty" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="50.0dip" />
+
+    <include
+        android:id="@+id/include_botto"
+        layout="@layout/bottom_button" />
+
+</LinearLayout>

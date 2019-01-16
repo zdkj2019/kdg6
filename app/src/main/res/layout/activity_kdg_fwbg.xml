@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="工单信息"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="主表号：" />
+
+                <TextView
+                    android:id="@+id/tv_zbh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="市/县：" />
+
+                <TextView
+                    android:id="@+id/tv_axdh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="片区：" />
+
+                <TextView
+                    android:id="@+id/tv_xqmc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="小区名称：" />
+
+                <TextView
+                    android:id="@+id/tv_xxdz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="详细地址：" />
+
+                <TextView
+                    android:id="@+id/tv_ywlx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="业务类型：" />
+
+                <TextView
+                    android:id="@+id/tv_gzxx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="故障信息：" />
+
+                <TextView
+                    android:id="@+id/tv_sblx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="是否二次工单：" />
+
+                <TextView
+                    android:id="@+id/tv_sfecgd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="不通过原因：" />
+
+                <TextView
+                    android:id="@+id/tv_btgyy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="备注：" />
+
+                <TextView
+                    android:id="@+id/tv_ds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/tablerow_sty" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="二次上门"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="是否申请二次上门 ：" />
+
+                <RadioGroup
+                    android:id="@+id/rg_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="是"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="否"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="申请二次上门原因：" />
+
+                <EditText
+                    android:id="@+id/et_smyy"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text=""
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_yhpj"
+            style="@style/tablerow_sty" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="已换配件"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_yhpj_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_xzpj"
+            style="@style/tablerow_sty" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="新增配件"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_xzpj_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否换配件：" />
+
+                <CheckBox
+                    android:id="@+id/cb_xzpj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="新增配件：" />
+
+                <TextView
+                    android:id="@+id/tv_xzpj"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text=""
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sbxx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="设备信息"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sbxx_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/tablerow_sty"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设备编码：" />
+
+                <EditText
+                    android:id="@+id/et_sbbm"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="请扫描二维码"
+                    android:text=""
+                    android:textColor="@color/gray" />
+
+                <Button
+                    android:id="@+id/btn_sm"
+                    android:layout_width="50sp"
+                    android:layout_height="25sp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_normal"
+                    android:text="扫描"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <View
+                style="@style/view_sty"
+                android:visibility="gone" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否增加设备：" />
+
+                <RadioGroup
+                    android:id="@+id/rg_sfzjsb"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="是" />
+
+                    <RadioButton
+                        android:id="@+id/rb_f"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="否" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="终端号：" />
+
+                <EditText
+                    android:id="@+id/et_zdh"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text=""
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIM卡号：" />
+
+                <EditText
+                    android:id="@+id/et_simkh"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text=""
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主柜序列号：" />
+
+                <EditText
+                    android:id="@+id/et_zgxlh"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:tag=""
+                    android:text=""
+                    android:textColor="#ff0190eb" />
+
+                <Button
+                    android:id="@+id/btn_xz_zg"
+                    android:layout_width="50sp"
+                    android:layout_height="25sp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_normal"
+                    android:text="选择"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="副柜实际安装数：" />
+
+                <Spinner
+                    android:id="@+id/spinner_fgsjazs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout
+                android:id="@+id/ll_fgxlh_qt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_1"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜1序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg1"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg1"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_1"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_2"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜2序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg2"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg2"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_2"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_3"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜3序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg3"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg3"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_3"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_4"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜4序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg4"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg4"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_4"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_5"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜5序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg5"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg5"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_5"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_6"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜6序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg6"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg6"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_6"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_7"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜7序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg7"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg7"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_7"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_8"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="副柜8序列号：" />
+
+                    <EditText
+                        android:id="@+id/et_fg8"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_xz_fg8"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="选择"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_8"
+                    style="@style/view_sty" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="安装内容"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <include
+            android:id="@+id/include_botto"
+            layout="@layout/bottom_button" />
+    </LinearLayout>
+
+</ScrollView>

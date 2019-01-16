@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ededed" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="设备信息"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="二维码" />
+
+                <EditText
+                    android:id="@+id/et_sbid"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:editable="false"
+                    android:hint="请扫描二维码"
+                    android:text=""
+                    android:textColor="@color/gray" />
+
+                <Button
+                    android:id="@+id/btn_sm"
+                    android:layout_width="50sp"
+                    android:layout_height="25sp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_normal"
+                    android:text="扫描"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="柜机编码" />
+
+                <EditText
+                    android:id="@+id/et_gjbm"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:layout_width="50dp"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="设备类型" />
+
+                <Spinner
+                    android:id="@+id/spinner_sblx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout
+                style="@style/tablerow_sty"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="省份" />
+
+                <Spinner
+                    android:id="@+id/spinner_sf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="地市" />
+
+                <Spinner
+                    android:id="@+id/spinner_ds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="区县" />
+
+                <Spinner
+                    android:id="@+id/spinner_qx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="小区名称" />
+
+                <TextView
+                    android:id="@+id/tv_xqmc"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:layout_width="50dp"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="街道地址" />
+
+                <EditText
+                    android:id="@+id/et_jddz"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:layout_width="50dp"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="投放地址" />
+
+                <EditText
+                    android:id="@+id/et_xxdz"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:layout_width="50dp"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="主柜编码" />
+
+                <EditText
+                    android:id="@+id/et_zgbm"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:hint="字母或数字，最少6位，不必填"
+                    android:textColor="#ff0190eb" />
+
+                <Button
+                    android:id="@+id/btn_zg"
+                    android:layout_width="50sp"
+                    android:layout_height="25sp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/btn_normal"
+                    android:text="扫描"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout
+                style="@style/tablerow_sty"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="柜机规格" />
+
+                <Spinner
+                    android:id="@+id/spinner_fgsl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/spinner" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout
+                android:id="@+id/ll_fgxlh_qt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_1"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜1编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg1"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg1"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_1"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_2"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜2编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg2"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg2"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_2"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_3"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜3编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg3"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg3"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_3"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_4"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜4编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg4"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg4"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_4"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_5"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜5编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg5"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg5"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_5"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_6"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜6编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg6"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg6"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_6"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_7"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜7编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg7"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg7"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_7"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_8"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜8编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg8"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg8"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_8"
+                    style="@style/view_sty" />
+
+                <LinearLayout
+                    android:id="@+id/ll_fg_9"
+                    style="@style/tablerow_sty" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="副柜9编码" />
+
+                    <EditText
+                        android:id="@+id/et_fg9"
+                        style="@style/edittext_sty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:hint="字母或数字，最少6位，不必填"
+                        android:tag=""
+                        android:text=""
+                        android:textColor="#ff0190eb" />
+
+                    <Button
+                        android:id="@+id/btn_fg9"
+                        android:layout_width="50sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/btn_normal"
+                        android:text="扫描"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_9"
+                    style="@style/view_sty" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/tablerow_sty" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/et_bz"
+                    style="@style/edittext_sty"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:textColor="#ff0190eb" />
+
+                <ImageView
+                    style="@style/text_image"
+                    android:layout_width="50dp"
+                    android:contentDescription="@string/todo" />
+            </LinearLayout>
+
+            <View style="@style/view_sty" />
+
+            <LinearLayout
+                android:id="@+id/ll_bhyy"
+                style="@style/tablerow_sty"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="驳回原因" />
+
+                <TextView
+                    android:id="@+id/tv_bhyy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/ll_bhyy_line"
+                style="@style/view_sty"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_show_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_wxnr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="巡检内容"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/part"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="10dp" />
+
+        <include
+            android:id="@+id/include_botto"
+            layout="@layout/bottom_button" />
+    </LinearLayout>
+
+</ScrollView>

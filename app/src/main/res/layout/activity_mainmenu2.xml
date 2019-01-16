@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/content_bg_main" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="274dp"
+        android:layout_height="370dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/Button01"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            tools:ignore="SelectableText" />
+
+        <GridView
+            android:id="@+id/gridView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"
+            android:horizontalSpacing="0dp"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:verticalSpacing="1dp" >
+        </GridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_djs"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/showjssl"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp"
+            tools:ignore="SelectableText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/_dxd"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/showWgsl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp"
+            tools:ignore="SelectableText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wecomeyyt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_wecome"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/wecomeyyt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp"
+            tools:ignore="SelectableText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wecomeyyt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编码："
+            android:textColor="#4A9DE2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/showuserid"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp"
+            tools:ignore="SelectableText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="名称："
+            android:textColor="#4A9DE2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/showusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#4A9DE2"
+            android:textSize="12sp"
+            tools:ignore="SelectableText" />
+    </LinearLayout>
+
+</RelativeLayout>
