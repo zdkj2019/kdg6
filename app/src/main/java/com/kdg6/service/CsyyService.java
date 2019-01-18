@@ -45,7 +45,7 @@ public class CsyyService extends Service implements Sign {
 		wakeLock.acquire();
 
 		callWebserviceImp = new CallWebserviceImp();
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 		getWebService("query");
 		return super.onStartCommand(intent, flags, startId);
 	}

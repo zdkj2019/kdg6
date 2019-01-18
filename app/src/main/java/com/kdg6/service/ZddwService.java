@@ -60,8 +60,8 @@ public class ZddwService extends Service{
 		wakeLock.acquire();
 
 		callWebserviceImp = new CallWebserviceImp();
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
-		spf_zddw = getSharedPreferences("zddw", ZddwService.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
+		spf_zddw = getSharedPreferences("zddw", ZddwService.MODE_PRIVATE);
 		mLocClient = new LocationClient(getApplicationContext()); // 声明LocationClient类
 		mLocClient.registerLocationListener(myListener); // 注册监听函数
 		setLocationClientOption();

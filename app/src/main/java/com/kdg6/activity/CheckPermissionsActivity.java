@@ -27,14 +27,14 @@ public class CheckPermissionsActivity extends Activity {
 			Manifest.permission.ACCESS_WIFI_STATE,
 			Manifest.permission.READ_PHONE_STATE,
 			Manifest.permission.ACCESS_COARSE_LOCATION
-			};
-	
+	};
+
 	private static final int PERMISSON_REQUESTCODE = 0;
-	
+
 	/**
 	 */
 	private boolean isNeedCheck = true;
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -45,9 +45,9 @@ public class CheckPermissionsActivity extends Activity {
 			}
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param permissions
 	 * @since 2.5.0
 	 *
@@ -71,7 +71,7 @@ public class CheckPermissionsActivity extends Activity {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param permissions
 	 * @return
 	 * @since 2.5.0
@@ -116,7 +116,7 @@ public class CheckPermissionsActivity extends Activity {
 	@SuppressLint("Override")
 	@TargetApi(23)
 	public void onRequestPermissionsResult(int requestCode,
-			String[] permissions, int[] paramArrayOfInt) {
+										   String[] permissions, int[] paramArrayOfInt) {
 		if (requestCode == PERMISSON_REQUESTCODE) {
 			if (!verifyPermissions(paramArrayOfInt)) {
 				showMissingPermissionDialog();
@@ -126,7 +126,7 @@ public class CheckPermissionsActivity extends Activity {
 	}
 
 	/**
-	 * 
+	 *
 	 * @since 2.5.0
 	 *
 	 */
@@ -135,7 +135,7 @@ public class CheckPermissionsActivity extends Activity {
 		builder.setTitle("提示");
 		builder.setMessage("asdad");
 
-		builder.setNegativeButton("退出",
+		builder.setNegativeButton("取消",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -157,7 +157,7 @@ public class CheckPermissionsActivity extends Activity {
 	}
 
 	/**
-	 * 
+	 *
 	 * @since 2.5.0
 	 *
 	 */
@@ -167,7 +167,7 @@ public class CheckPermissionsActivity extends Activity {
 		intent.setData(Uri.parse("package:" + getPackageName()));
 		startActivity(intent);
 	}
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode == KeyEvent.KEYCODE_BACK){
@@ -176,5 +176,5 @@ public class CheckPermissionsActivity extends Activity {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-		
+
 }

@@ -431,8 +431,8 @@ public class DhjcKdg extends FrameActivity {
 		}
 		filename = String.valueOf(System.currentTimeMillis()).trim().substring(4);
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(
-				Environment.getExternalStorageDirectory(), filename + ".jpg")));
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		intent.putExtra(MediaStore.EXTRA_OUTPUT,getUriForFile(getApplicationContext(),new File(Constant.SAVE_PIC_PATH, filename + ".jpg")));
 		startActivityForResult(intent, 1);
 
 	}

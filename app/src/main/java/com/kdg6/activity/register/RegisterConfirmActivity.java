@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import com.kdg6.R;
 import com.kdg6.activity.FrameActivity;
+import com.kdg6.common.Constant;
 import com.kdg6.utils.Config;
 import com.kdg6.utils.IDCard;
 import com.kdg6.utils.ImageUtil;
@@ -547,8 +548,8 @@ public class RegisterConfirmActivity extends FrameActivity {
 		}
 		filename = String.valueOf(System.currentTimeMillis()).trim().substring(4);
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(
-				Environment.getExternalStorageDirectory(), filename + ".jpg")));
+		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		intent.putExtra(MediaStore.EXTRA_OUTPUT,getUriForFile(getApplicationContext(),new File(Constant.SAVE_PIC_PATH, filename + ".jpg")));
 		startActivityForResult(intent, 1);
 
 	}

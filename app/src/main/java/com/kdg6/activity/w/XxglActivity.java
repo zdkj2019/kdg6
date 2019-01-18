@@ -87,7 +87,7 @@ public class XxglActivity extends FrameActivity {
 	@Override
 	protected void initView() {
 		title.setText(DataCache.getinition().getTitle());
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 	}
 
 	@Override

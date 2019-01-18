@@ -19,6 +19,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +33,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -62,6 +64,7 @@ import com.kdg6.activity.util.ImgChoose;
 import com.kdg6.activity.util.ImgGridViewUtil;
 import com.kdg6.activity.util.ImgPz;
 import com.kdg6.cache.DataCache;
+import com.kdg6.common.Constant;
 import com.kdg6.definition.Sign;
 import com.kdg6.utils.ImageUtil;
 import com.kdg6.webservice.CallWebserviceImp;
@@ -211,7 +214,7 @@ public abstract class FrameActivity extends BaseActivity implements Sign {
 	protected String getUserId(){
 		String userid = DataCache.getinition().getUserId();
 		if(userid==null){
-			SharedPreferences spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+			SharedPreferences spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 			userid = spf.getString("userId", "");
 		}
 		return userid;
@@ -548,72 +551,6 @@ public abstract class FrameActivity extends BaseActivity implements Sign {
 		startActivityForResult(intent, requestCode);
 	}
 
-	// protected void loadGridView(final GridView gridview,
-	// final List<Map<String, Object>> data_list,
-	// final ArrayList<String> list) {
-	// String[] from = new String[] { "img", "filepath" };
-	// int[] to = new int[] { R.id.child_image, R.id.child_text };
-	//
-	// final SimpleAdapter adapter = new SimpleAdapter(
-	// getApplicationContext(), data_list,
-	// R.layout.item_grid_image_pz, from, to);
-	//
-	// adapter.setViewBinder(new ViewBinder() {
-	//
-	// public boolean setViewValue(View view, Object data,
-	// String textRepresentation) {
-	// // 判断是否为我们要处理的对象
-	// if (view.getId() == R.id.child_image) {
-	// Bitmap bitmap = ImageUtil.ratio(data.toString(), 150, 150);
-	// ImageView iv = (ImageView) view;
-	// iv.setImageBitmap(bitmap);
-	// return true;
-	// } else {
-	// return false;
-	// }
-	// }
-	//
-	// });
-	//
-	// // 配置适配器
-	// gridview.setAdapter(adapter);
-	// // gridview.setOnItemClickListener(new OnItemClickListener() {
-	// //
-	// // @Override
-	// // public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-	// // long arg3) {
-	// // Intent intent = new Intent(getApplicationContext(),
-	// // ImagePagerActivity.class);
-	// // intent.putExtra("imageUrls",
-	// // list.toArray(new String[list.size()]));
-	// // intent.putExtra("position", 0);
-	// // startActivity(intent);
-	// // }
-	// // });
-	//
-	// gridview.setOnItemLongClickListener(new OnItemLongClickListener() {
-	//
-	// @Override
-	// public boolean onItemLongClick(AdapterView<?> parent, View view,
-	// final int position, long id) {
-	// dialogShowMessage("是否删除选中图片?",
-	// new DialogInterface.OnClickListener() {
-	// public void onClick(DialogInterface face,
-	// int paramAnonymous2Int) {
-	// data_list.remove(position);
-	// ImgGridViewUtil
-	// .setListViewHeightBasedOnChildren(gridview);
-	// adapter.notifyDataSetChanged();
-	// }
-	// }, null);
-	// return false;
-	// }
-	// });
-	// ImgGridViewUtil.setListViewHeightBasedOnChildren(gridview);
-	// adapter.notifyDataSetChanged();
-	// gridview.setVisibility(View.VISIBLE);
-	// }
-
 	protected boolean uploadPic(String num, String mxh, final byte[] data1,
 								final String methed, String zbh, String sqlid) throws Exception {
 
@@ -629,6 +566,10 @@ public abstract class FrameActivity extends BaseActivity implements Sign {
 			}
 		}
 		return false;
+	}
+
+	public static Uri getUriForFile(Context context, File file) {
+		return FileProvider.getUriForFile(context, Constant.PackageName+".fileProvider", file);
 	}
 
 	protected byte[] readJpeg(File filename) {

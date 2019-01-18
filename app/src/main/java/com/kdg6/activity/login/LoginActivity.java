@@ -97,7 +97,7 @@ public class LoginActivity extends FrameActivity {
 	@Override
 	protected void initView() {
 
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 		boolean autologin = spf.getBoolean("autologin", false);
 		userid = spf.getString("userId", "");
 		nameStr = spf.getString("nameStr", "");

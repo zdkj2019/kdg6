@@ -14,6 +14,7 @@ public class Constant {
 	public static  String ImgPath = "http://esp.zdetech.com";
 
 	public static String AppName = "kdg6.apk";
+	public static String PackageName = "com.kdg6";
 	public static  String STM_NAMESPACE = "http://zdgl_kdg_x1";
 
 	public static final int NETWORK_ERROR = 1;

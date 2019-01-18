@@ -300,7 +300,7 @@ public class ZcdjInfo extends FrameActivity {
 			}
 		}else{
 			try {
-				spf = getSharedPreferences("zcdj", ZcdjQuery.MODE_WORLD_READABLE);
+				spf = getSharedPreferences("zcdj", ZcdjQuery.MODE_PRIVATE);
 				String jsonStr = spf.getString("ssx", "");
 				if(!"".equals(jsonStr)){
 					JSONObject json = new JSONObject(jsonStr);
@@ -701,7 +701,7 @@ public class ZcdjInfo extends FrameActivity {
 					RadioGroup rg = (RadioGroup) ll.getChildAt(0);
 					RadioButton rb = (RadioButton) rg.findViewById(rg.getCheckedRadioButtonId());
 					if (rb == null) {
-						toastShowMessage("维修内容中选择项不能为空！");
+						toastShowMessage("巡检内容中选择项不能为空！");
 						return false;
 					}
 				}

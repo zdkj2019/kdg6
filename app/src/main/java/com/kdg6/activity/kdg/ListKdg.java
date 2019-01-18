@@ -75,7 +75,7 @@ public class ListKdg extends FrameActivity {
 				"datemy", "ztzt" };
 		to = new int[] { R.id.textView1, R.id.yytmy, R.id.pgdhmy, R.id.timemy,
 				R.id.datemy, R.id.ztzt };
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 		findViewById(R.id.ll_filter).setVisibility(View.VISIBLE);
 		et_search = (EditText) findViewById(R.id.et_search);
 	}

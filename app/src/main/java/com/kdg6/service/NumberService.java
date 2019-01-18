@@ -49,7 +49,7 @@ public class NumberService extends Service implements Sign {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		// 去查询数据，进行更新
 		callWebserviceImp = new CallWebserviceImp();
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 		getWebService("query");
 		return super.onStartCommand(intent, flags, startId);
 	}

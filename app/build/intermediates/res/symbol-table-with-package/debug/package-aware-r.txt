@@ -395,11 +395,9 @@ id LinearLayout1
 id TextV1
 id TextVjsdw
 id TextVkdlx
-id TextVkdzh
 id TextVsupq
 id TextVxq
 id TextVxxdz
-id TextVyuyuetime
 id Textcsrq
 id Top_Date
 id View01
@@ -544,7 +542,6 @@ id et_2
 id et_address
 id et_agreement
 id et_bz
-id et_bzr
 id et_clgc
 id et_csnr
 id et_fg1
@@ -560,12 +557,10 @@ id et_fh
 id et_flc
 id et_gh
 id et_gjbm
-id et_gzxx
 id et_jddz
 id et_khh
 id et_khm
 id et_kzzf1
-id et_lxdh
 id et_lxdhr
 id et_lxdhr2
 id et_mima
@@ -1032,7 +1027,6 @@ id tv_jssx
 id tv_kc
 id tv_kdg
 id tv_kdlx
-id tv_kdzh
 id tv_kfmc
 id tv_kfxm
 id tv_kfyq
@@ -1056,7 +1050,6 @@ id tv_sbbm
 id tv_sbgh
 id tv_sblx
 id tv_sbzl
-id tv_servicepeople
 id tv_sfecgd
 id tv_sgdh
 id tv_sl
@@ -1076,7 +1069,6 @@ id tv_val
 id tv_w
 id tv_wd
 id tv_wdmc
-id tv_wxaz
 id tv_wxnr
 id tv_xh
 id tv_xqmc
@@ -1087,7 +1079,6 @@ id tv_xz_wx_t24
 id tv_xz_wx_t48
 id tv_xzpj
 id tv_yskje
-id tv_yuyuetime
 id tv_ywlx
 id tv_yykmb
 id tv_yytdz
@@ -1136,7 +1127,6 @@ layout activity_changepassword
 layout activity_choosezfg
 layout activity_cjwt
 layout activity_cjwtshow
-layout activity_customerdispatching
 layout activity_datafilter
 layout activity_dispatchinginformationreceiving
 layout activity_frame
@@ -1470,3 +1460,4 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable QRCodeView qrcv_animTime qrcv_barCodeTipText qrcv_barcodeRectHeight qrcv_borderColor qrcv_borderSize qrcv_cornerColor qrcv_cornerDisplayType qrcv_cornerLength qrcv_cornerSize qrcv_customGridScanLineDrawable qrcv_customScanLineDrawable qrcv_isAutoZoom qrcv_isBarcode qrcv_isOnlyDecodeScanBoxArea qrcv_isScanLineReverse qrcv_isShowDefaultGridScanLineDrawable qrcv_isShowDefaultScanLineDrawable qrcv_isShowLocationPoint qrcv_isShowTipBackground qrcv_isShowTipTextAsSingleLine qrcv_isTipTextBelowRect qrcv_maskColor qrcv_qrCodeTipText qrcv_rectWidth qrcv_scanLineColor qrcv_scanLineMargin qrcv_scanLineSize qrcv_tipBackgroundColor qrcv_tipTextColor qrcv_tipTextMargin qrcv_tipTextSize qrcv_toolbarHeight qrcv_topOffset qrcv_verticalBias
+xml file_paths

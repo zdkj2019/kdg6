@@ -64,7 +64,7 @@ public class PqzgjslShow extends FrameActivity {
 				R.id.confirm);
 		cancel = (Button) findViewById(R.id.include_botto).findViewById(
 				R.id.cancel);
-		spf = getSharedPreferences("loginsp", LoginActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
 	}
 
 	@Override

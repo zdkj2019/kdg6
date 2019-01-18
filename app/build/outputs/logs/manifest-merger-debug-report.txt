@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\cfd77d38fbd2052f4e652ab88c9cc821\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\9ebbb0e8d6557440cf1a81b0707de5c2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\6e282fad3d4ad2f641e01f8e57472798\AndroidManifest.xml:17:1-22:12
@@ -29,9 +29,9 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\zdkj\.gradle\cache
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\6884277d6a990418d3cdb99d80e72ad7\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\7695ca4a821a9023c45f27af3e57dbf4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\ad25c9fa51f795914b0018d723a160e8\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
-INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-569:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
+INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:2:1-580:12
 	package
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:3:5-23
 		INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml
@@ -137,7 +137,7 @@ ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xm
 	android:name
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:33:22-65
 application
-ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:35:5-567:19
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:35:5-578:19
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\304d5be222b9f7378afa1dc0f0941066\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\304d5be222b9f7378afa1dc0f0941066\AndroidManifest.xml:22:5-94
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\zdkj\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\ea7af415867447b9025b92606ccd8e32\AndroidManifest.xml:22:5-23:19
@@ -1016,6 +1016,22 @@ ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xm
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:566:13-41
 	android:name
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:565:13-44
+provider#android.support.v4.content.FileProvider
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:570:9-576:20
+	android:grantUriPermissions
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:573:13-47
+	android:authorities
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:571:13-56
+	android:exported
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:572:13-37
+	android:name
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:570:19-73
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:574:13-575:54
+	android:resource
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:575:17-51
+	android:name
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:574:24-74
 uses-sdk
 INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml

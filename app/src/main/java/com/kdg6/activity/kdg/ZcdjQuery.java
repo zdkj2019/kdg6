@@ -350,7 +350,7 @@ public class ZcdjQuery extends FrameActivity {
 
 	private void loadData(){
 		try {
-			spf = getSharedPreferences("zcdj", ZcdjQuery.MODE_WORLD_READABLE);
+			spf = getSharedPreferences("zcdj", ZcdjQuery.MODE_PRIVATE);
 			String jsonStr = spf.getString("ssx", "");
 			if(!"".equals(jsonStr)){
 				JSONObject json = new JSONObject(jsonStr);

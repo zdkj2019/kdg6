@@ -50,7 +50,7 @@ public class GzpActivity extends FrameActivity {
 		tv_bm = (TextView) findViewById(R.id.tv_bm);
 		tv_zw = (TextView) findViewById(R.id.tv_zw);
 		tv_gh = (TextView) findViewById(R.id.tv_gh);
-		spf = getSharedPreferences("gzpxx", GzpLrActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("gzpxx", GzpLrActivity.MODE_PRIVATE);
 		tv_name.setText(spf.getString("username", ""));
 		tv_gh.setText(spf.getString("gh", ""));
 	}

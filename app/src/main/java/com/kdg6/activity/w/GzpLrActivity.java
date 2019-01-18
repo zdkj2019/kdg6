@@ -61,7 +61,7 @@ public class GzpLrActivity extends FrameActivity {
 		et_gh = (EditText) findViewById(R.id.et_gh);
 		confirm = (Button) findViewById(R.id.confirm);
 		cancel = (Button) findViewById(R.id.cancel);
-		spf = getSharedPreferences("gzpxx", GzpLrActivity.MODE_WORLD_READABLE);
+		spf = getSharedPreferences("gzpxx", GzpLrActivity.MODE_PRIVATE);
 		et_name.setText(spf.getString("username", ""));
 		et_gh.setText(spf.getString("gh", ""));
 	}

@@ -56,7 +56,7 @@ public class ChangePasswordActivity extends FrameActivity {
 	protected void initView() {
 		title.setText(DataCache.getinition().getTitle());
 		loginps = getSharedPreferences("loginsp",
-				LoginActivity.MODE_WORLD_READABLE).getString("userPs", "");
+				LoginActivity.MODE_PRIVATE).getString("userPs", "");
 		String userstext = "(" + DataCache.getinition().getUserId() + ")"
 				+ DataCache.getinition().getUsername();
 		et_users.setText(userstext);

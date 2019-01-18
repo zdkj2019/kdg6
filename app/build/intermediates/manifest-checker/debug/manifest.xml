@@ -3,7 +3,7 @@
     package="com.kdg6"
     android:installLocation="internalOnly"
     android:versionCode="2"
-    android:versionName="1.20" >
+    android:versionName="1.21" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -571,6 +571,16 @@
             android:name="XG_V2_ACCESS_KEY"
             android:value="A3DWG4V6B94F" />
 
+        <!-- 如果你的app支持android7.0及以上，那么在android apk的时候临时给app授权访问文件的权限 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.kdg6.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.kdg6.com.android.tools.ir.server.InstantRunContentProvider"

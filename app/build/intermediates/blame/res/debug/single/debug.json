@@ -1204,10 +1204,6 @@
         "source": "D:\\application\\Android\\workspace\\kdg6\\app\\src\\main\\res\\drawable-hdpi\\login_btn_down.png"
     },
     {
-        "merged": "D:\\application\\Android\\workspace\\kdg6\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_customerdispatching.xml.flat",
-        "source": "D:\\application\\Android\\workspace\\kdg6\\app\\src\\main\\res\\layout\\activity_customerdispatching.xml"
-    },
-    {
         "merged": "D:\\application\\Android\\workspace\\kdg6\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_w_ico.png.flat",
         "source": "D:\\application\\Android\\workspace\\kdg6\\app\\src\\main\\res\\drawable-hdpi\\w_ico.png"
     },
@@ -1226,6 +1222,10 @@
     {
         "merged": "D:\\application\\Android\\workspace\\kdg6\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_kdg_jdxy.xml.flat",
         "source": "D:\\application\\Android\\workspace\\kdg6\\app\\src\\main\\res\\layout\\activity_kdg_jdxy.xml"
+    },
+    {
+        "merged": "D:\\application\\Android\\workspace\\kdg6\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
+        "source": "D:\\application\\Android\\workspace\\kdg6\\app\\src\\main\\res\\xml\\file_paths.xml"
     },
     {
         "merged": "D:\\application\\Android\\workspace\\kdg6\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_choosezfg.xml.flat",
