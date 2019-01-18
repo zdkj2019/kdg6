@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -41,7 +42,7 @@ import com.kdg6.utils.Config;
 import com.kdg6.webservice.CallWebserviceImp;
 
 @SuppressLint("HandlerLeak")
-public class LoadingActivity extends BaseActivity {
+public class LoadingActivity extends Activity {
 	private String retcode, version, retmsg;
 	private UpdateInfo info = new UpdateInfo();
 

@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,10 +23,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kdg6.R;
 import com.kdg6.activity.FrameActivity;
@@ -33,6 +38,7 @@ import com.kdg6.activity.w.SetParams;
 import com.kdg6.cache.DataCache;
 import com.kdg6.common.Constant;
 import com.kdg6.utils.Config;
+import com.kdg6.webservice.CallWebserviceImp;
 
 /**
  * 登录页面
@@ -40,8 +46,9 @@ import com.kdg6.utils.Config;
  * @author
  */
 @SuppressLint("HandlerLeak")
-public class LoginActivity extends FrameActivity {
+public class LoginActivity extends Activity {
 
+	private ProgressDialog progressDialog;
 	private SharedPreferences spf;
 	private SharedPreferences.Editor spfe;
 	private EditText et_userid, et_password;
@@ -52,9 +59,12 @@ public class LoginActivity extends FrameActivity {
 	private JSONObject jsonObject;
 	private TextView tv_register, tv_sz;
 
+	private CallWebserviceImp callWebserviceImp = new CallWebserviceImp();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login);
 		initView();// 是否自动登录
 		initVariable();
@@ -62,7 +72,6 @@ public class LoginActivity extends FrameActivity {
 
 	}
 
-	@Override
 	protected void initVariable() {
 		et_userid = (EditText) findViewById(R.id.userId);
 		et_password = (EditText) findViewById(R.id.userPs);
@@ -94,7 +103,6 @@ public class LoginActivity extends FrameActivity {
 	/**
 	 * 是否自动登录
 	 */
-	@Override
 	protected void initView() {
 
 		spf = getSharedPreferences("loginsp", LoginActivity.MODE_PRIVATE);
@@ -108,7 +116,6 @@ public class LoginActivity extends FrameActivity {
 
 	}
 
-	@Override
 	protected void initListeners() {
 
 		// 登录
@@ -155,7 +162,10 @@ public class LoginActivity extends FrameActivity {
 
 	}
 
-	@Override
+	protected void showProgressDialog() {
+		progressDialog = ProgressDialog.show(this, "提示", "正在处理中，请稍后...");
+	}
+
 	protected void getWebService(String s) {
 
 		if ("Login".equals(s)) {
@@ -294,7 +304,7 @@ public class LoginActivity extends FrameActivity {
 
 			} catch (Exception e) {
 				Message msg = Message.obtain();
-				msg.what = NETWORK_ERROR;// 网络不通
+				msg.what = Constant.NETWORK_ERROR;// 网络不通
 				handler.sendMessage(msg);
 			}
 		}
@@ -313,12 +323,12 @@ public class LoginActivity extends FrameActivity {
 					DataCache.getinition().setHasYHK(false);
 				}
 				Message msg = Message.obtain();
-				msg.what = SUCCESSFUL;
+				msg.what = Constant.SUCCESS;
 				handler.sendMessage(msg);
 			} catch (Exception e) {
 				e.printStackTrace();
 				Message msg = Message.obtain();
-				msg.what = NETWORK_ERROR;
+				msg.what = Constant.NETWORK_ERROR;
 				handler.sendMessage(msg);
 			}
 		}
@@ -355,7 +365,7 @@ public class LoginActivity extends FrameActivity {
 			} catch (Exception e) {
 				// Toast.makeText(this, jsonObject.toString(), 1).show();
 				Message msg = new Message();
-				msg.what = NETWORK_ERROR;// 网络不通
+				msg.what = Constant.NETWORK_ERROR;// 网络不通
 				handler.sendMessage(msg);
 			}
 		}
@@ -382,7 +392,7 @@ public class LoginActivity extends FrameActivity {
 					});
 
 					Message msg = new Message();
-					msg.what = SUCCESSFUL;// 成功
+					msg.what = Constant.SUCCESS;// 成功
 					handler.sendMessage(msg);
 					// getWebService("fy");
 
@@ -395,7 +405,7 @@ public class LoginActivity extends FrameActivity {
 			} catch (Exception e) {
 				// Toast.makeText(this, jsonObject.toString(), 1).show();
 				Message msg = new Message();
-				msg.what = NETWORK_ERROR;// 网络不通
+				msg.what = Constant.NETWORK_ERROR;// 网络不通
 				handler.sendMessage(msg);
 			}
 		}
@@ -432,7 +442,7 @@ public class LoginActivity extends FrameActivity {
 			} catch (Exception e) {
 				// Toast.makeText(this, jsonObject.toString(), 1).show();
 				Message msg = new Message();
-				msg.what = NETWORK_ERROR;// 网络不通
+				msg.what = Constant.NETWORK_ERROR;// 网络不通
 				handler.sendMessage(msg);
 			}
 		}
@@ -454,13 +464,13 @@ public class LoginActivity extends FrameActivity {
 				// });
 
 				Message msg = new Message();
-				msg.what = SUCCESSFUL;// 成功
+				msg.what = Constant.SUCCESS;// 成功
 				handler.sendMessage(msg);
 
 			} catch (Exception e) {
 				// Toast.makeText(this, jsonObject.toString(), 1).show();
 				Message msg = new Message();
-				msg.what = NETWORK_ERROR;// 网络不通
+				msg.what = Constant.NETWORK_ERROR;// 网络不通
 				handler.sendMessage(msg);
 			}
 		}
@@ -472,15 +482,19 @@ public class LoginActivity extends FrameActivity {
 	 */
 	@Override
 	public void onBackPressed() {
-		dialogShowMessage("确定退出?", new DialogInterface.OnClickListener() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setCancelable(false);
+		builder.setMessage("确定退出?");
+		builder.setTitle("提示");
+		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				finish();
 				System.exit(0);
 				// AppManager.getAppManager().AppExit(getApplicationContext());
-			}
-		}, null);
+			}});
+		builder.create().show();
 
 	}
 
@@ -492,23 +506,24 @@ public class LoginActivity extends FrameActivity {
 			super.handleMessage(msg);
 			switch (msg.what) {
 				case Constant.NETWORK_ERROR:
-					dialogShowMessage_P("网络连接失败，请检查网络连接是否正常！", null);
+					Toast.makeText(getApplicationContext(),"网络连接失败，请检查网络连接是否正常！",Toast.LENGTH_SHORT);
 					break;
 				case Constant.SUCCESS:
-					skipActivity(MainActivity.class);
+					Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+					startActivity(intent);
 					break;
 				case Constant.FAIL:
 					if (flag_DL.equals("4")) {
-						dialogShowMessage_P("你密码输入错误3次,帐号已锁定,请联系管理员解锁!", null);
+						Toast.makeText(getApplicationContext(),"你密码输入错误3次,帐号已锁定,请联系管理员解锁!",Toast.LENGTH_SHORT);
 					} else {
-						dialogShowMessage_P("请输入正确的密码!输入密码错误超过3次,系统将锁定帐号", null);
+						Toast.makeText(getApplicationContext(),"请输入正确的密码!输入密码错误超过3次,系统将锁定帐号",Toast.LENGTH_SHORT);
 					}
 					break;
 				case Constant.NUM_7:
-					dialogShowMessage_P("没有菜单权限，请联系管理员！", null);
+					Toast.makeText(getApplicationContext(),"没有菜单权限，请联系管理员！",Toast.LENGTH_SHORT);
 					break;
 				case Constant.NUM_6:
-					dialogShowMessage_P("账号或密码不为空！", null);
+					Toast.makeText(getApplicationContext(),"账号或密码不为空！",Toast.LENGTH_SHORT);
 					break;
 			}
 			if(progressDialog!=null){

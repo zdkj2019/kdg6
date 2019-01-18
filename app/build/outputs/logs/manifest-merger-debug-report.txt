@@ -121,11 +121,15 @@ ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xm
 	android:name
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:27:22-78
 uses-feature#android.hardware.camera
-ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:29:5-60
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:29:5-83
+	android:required
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:29:58-81
 	android:name
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:29:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:30:5-70
+ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:30:5-93
+	android:required
+		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:30:68-91
 	android:name
 		ADDED from D:\application\Android\workspace\kdg6\app\src\main\AndroidManifest.xml:30:19-67
 uses-permission#android.permission.FLASHLIGHT

@@ -26,7 +26,8 @@ public class CheckPermissionsActivity extends Activity {
 			Manifest.permission.ACCESS_NETWORK_STATE,
 			Manifest.permission.ACCESS_WIFI_STATE,
 			Manifest.permission.READ_PHONE_STATE,
-			Manifest.permission.ACCESS_COARSE_LOCATION
+			Manifest.permission.ACCESS_COARSE_LOCATION,
+			Manifest.permission.CAMERA
 	};
 
 	private static final int PERMISSON_REQUESTCODE = 0;
@@ -38,8 +39,7 @@ public class CheckPermissionsActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (Build.VERSION.SDK_INT >= 23
-				&& getApplicationInfo().targetSdkVersion >= 23) {
+		if (Build.VERSION.SDK_INT >= 23 && getApplicationInfo().targetSdkVersion >= 23) {
 			if (isNeedCheck) {
 				checkPermissions(needPermissions);
 			}
@@ -54,15 +54,11 @@ public class CheckPermissionsActivity extends Activity {
 	 */
 	private void checkPermissions(String... permissions) {
 		try {
-			if (Build.VERSION.SDK_INT >= 23
-					&& getApplicationInfo().targetSdkVersion >= 23) {
+			if (Build.VERSION.SDK_INT >= 23 && getApplicationInfo().targetSdkVersion >= 23) {
 				List<String> needRequestPermissonList = findDeniedPermissions(permissions);
-				if (null != needRequestPermissonList
-						&& needRequestPermissonList.size() > 0) {
+				if (null != needRequestPermissonList && needRequestPermissonList.size() > 0) {
 					String[] array = needRequestPermissonList.toArray(new String[needRequestPermissonList.size()]);
-					Method method = getClass().getMethod("requestPermissions", new Class[]{String[].class,
-							int.class});
-
+					Method method = getClass().getMethod("requestPermissions", new Class[]{String[].class, int.class});
 					method.invoke(this, array, PERMISSON_REQUESTCODE);
 				}
 			}
@@ -79,15 +75,12 @@ public class CheckPermissionsActivity extends Activity {
 	 */
 	private List<String> findDeniedPermissions(String[] permissions) {
 		List<String> needRequestPermissonList = new ArrayList<String>();
-		if (Build.VERSION.SDK_INT >= 23
-				&& getApplicationInfo().targetSdkVersion >= 23){
+		if (Build.VERSION.SDK_INT >= 23 && getApplicationInfo().targetSdkVersion >= 23){
 			try {
 				for (String perm : permissions) {
 					Method checkSelfMethod = getClass().getMethod("checkSelfPermission", String.class);
-					Method shouldShowRequestPermissionRationaleMethod = getClass().getMethod("shouldShowRequestPermissionRationale",
-							String.class);
-					if ((Integer)checkSelfMethod.invoke(this, perm) != PackageManager.PERMISSION_GRANTED
-							|| (Boolean)shouldShowRequestPermissionRationaleMethod.invoke(this, perm)) {
+					Method shouldShowRequestPermissionRationaleMethod = getClass().getMethod("shouldShowRequestPermissionRationale", String.class);
+					if ((Integer)checkSelfMethod.invoke(this, perm) != PackageManager.PERMISSION_GRANTED || (Boolean)shouldShowRequestPermissionRationaleMethod.invoke(this, perm)) {
 						needRequestPermissonList.add(perm);
 					}
 				}
@@ -115,8 +108,7 @@ public class CheckPermissionsActivity extends Activity {
 
 	@SuppressLint("Override")
 	@TargetApi(23)
-	public void onRequestPermissionsResult(int requestCode,
-										   String[] permissions, int[] paramArrayOfInt) {
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] paramArrayOfInt) {
 		if (requestCode == PERMISSON_REQUESTCODE) {
 			if (!verifyPermissions(paramArrayOfInt)) {
 				showMissingPermissionDialog();
@@ -133,7 +125,7 @@ public class CheckPermissionsActivity extends Activity {
 	private void showMissingPermissionDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("提示");
-		builder.setMessage("asdad");
+		builder.setMessage("相关权限被禁用，请设置允许");
 
 		builder.setNegativeButton("取消",
 				new DialogInterface.OnClickListener() {
