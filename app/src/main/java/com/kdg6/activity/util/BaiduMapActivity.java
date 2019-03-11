@@ -36,6 +36,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.navi.BaiduMapNavigation;
 import com.baidu.mapapi.navi.NaviParaOption;
 import com.baidu.mapapi.search.core.PoiInfo;
+import com.baidu.mapapi.search.core.SearchResult;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
 import com.baidu.mapapi.search.poi.PoiCitySearchOption;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
@@ -164,7 +165,8 @@ public class BaiduMapActivity extends FrameActivity {
 
 		@Override
 		public void onGetPoiResult(PoiResult result) {
-			if (result == null) {
+			if (result == null || result.error!=SearchResult.ERRORNO.NO_ERROR) {
+				mBaiduMap.clear();
 				toastShowMessage("未找到结果");
 			} else {
 				mBaiduMap.clear();

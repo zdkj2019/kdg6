@@ -301,7 +301,7 @@ public class LoadingActivity extends Activity {
 
 				// 从服务器获取版本失败
 				case 0:
-					Toast.makeText(LoadingActivity.this, retmsg, Toast.LENGTH_SHORT)
+					Toast.makeText(LoadingActivity.this, retmsg, Toast.LENGTH_LONG)
 							.show();
 					LoginMain();
 					break;
@@ -335,7 +335,7 @@ public class LoadingActivity extends Activity {
 				// 服务器超时
 				case -1:
 					Toast.makeText(LoadingActivity.this, "获取服务器更新信息超时",
-							Toast.LENGTH_SHORT).show();
+							Toast.LENGTH_LONG).show();
 					LoginMain();
 					finish();
 					break;
@@ -343,7 +343,7 @@ public class LoadingActivity extends Activity {
 				// 下载apk失败
 				case -2:
 					Toast.makeText(LoadingActivity.this, "安装包下载失败",
-							Toast.LENGTH_SHORT).show();
+							Toast.LENGTH_LONG).show();
 					progressDialog.dismiss();
 					LoginMain();
 					finish();

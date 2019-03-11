@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:hint="请录入IP地址如：192.168.1.1"
+            android:hint="请录入IP地址如：192.168.1.1:8000"
             android:background="@drawable/edittext"
             android:textColor="@color/black" />
 

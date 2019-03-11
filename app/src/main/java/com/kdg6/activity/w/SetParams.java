@@ -55,7 +55,7 @@ public class SetParams extends FrameActivity {
 						if("".equals(et_val.getText().toString())){
 							toastShowMessage("请录入新的wenservice地址");
 						}else{
-							Constant.STM_WEBSERVICE_URL_dx = "http://"+et_val.getText().toString()+":8000/ws/services/zdgl_kdg_x1_u_getdata_web?wsdl";
+							Constant.STM_WEBSERVICE_URL_dx = "http://"+et_val.getText().toString()+"/ws/services/zdgl_kdg_x1_u_getdata_web?wsdl";
 							Constant.ImgPath = "http://"+et_val.getText().toString()+"/";
 							dialogShowMessage("修改成功", null, null);
 						}

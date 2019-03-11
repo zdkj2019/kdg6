@@ -6,7 +6,7 @@ public class Constant {
 
 //	public static  String ImgPath = "http://192.168.10.86/";
 //    public static  String STM_WEBSERVICE_URL_dx = "http://192.168.10.86:8000/ws/services/zdgl_kdg_x1_u_getdata_web?wsdl"; // 测试换
-
+//
 //    public static  String ImgPath = "http://121.40.206.151/";
 //    public static  String STM_WEBSERVICE_URL_dx = "http://121.40.206.151:8000/ws/services/zdgl_kdg_x1_u_getdata_web?wsdl"; // 测试换
 

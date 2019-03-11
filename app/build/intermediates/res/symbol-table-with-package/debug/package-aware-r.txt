@@ -143,8 +143,6 @@ color viewfinder_mask
 color weekname_color
 color white
 color yellow
-dimen activity_horizontal_margin
-dimen activity_vertical_margin
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -152,7 +150,6 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
-dimen main__top
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1133,6 +1130,8 @@ layout activity_frame
 layout activity_fyqr_list
 layout activity_fyqrcomplete
 layout activity_help
+layout activity_hpzh
+layout activity_hpzhmx
 layout activity_informationreceiving
 layout activity_informationreceivingrefuse
 layout activity_jbxx
@@ -1149,6 +1148,7 @@ layout activity_kdg_gzdw
 layout activity_kdg_jdxy
 layout activity_kdg_jqgdcx
 layout activity_kdg_jqgdcxshow
+layout activity_kdg_kccxchoose
 layout activity_kdg_sbxxpd
 layout activity_kdg_smdw
 layout activity_kdg_xddw_jdxy
@@ -1461,3 +1461,4 @@ styleable GradientColor android_startColor android_endColor android_type android
 styleable GradientColorItem android_color android_offset
 styleable QRCodeView qrcv_animTime qrcv_barCodeTipText qrcv_barcodeRectHeight qrcv_borderColor qrcv_borderSize qrcv_cornerColor qrcv_cornerDisplayType qrcv_cornerLength qrcv_cornerSize qrcv_customGridScanLineDrawable qrcv_customScanLineDrawable qrcv_isAutoZoom qrcv_isBarcode qrcv_isOnlyDecodeScanBoxArea qrcv_isScanLineReverse qrcv_isShowDefaultGridScanLineDrawable qrcv_isShowDefaultScanLineDrawable qrcv_isShowLocationPoint qrcv_isShowTipBackground qrcv_isShowTipTextAsSingleLine qrcv_isTipTextBelowRect qrcv_maskColor qrcv_qrCodeTipText qrcv_rectWidth qrcv_scanLineColor qrcv_scanLineMargin qrcv_scanLineSize qrcv_tipBackgroundColor qrcv_tipTextColor qrcv_tipTextMargin qrcv_tipTextSize qrcv_toolbarHeight qrcv_topOffset qrcv_verticalBias
 xml file_paths
+xml network_security_config

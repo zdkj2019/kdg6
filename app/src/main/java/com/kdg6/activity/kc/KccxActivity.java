@@ -18,6 +18,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -47,11 +48,13 @@ public class KccxActivity extends FrameActivity {
 	private List<Map<String, Object>> data, currdata;
 	private String[] from;
 	private int[] to;
+	private String rg1,rg2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		appendMainBody(R.layout.activity_dispatchinginformationreceiving);
 		initVariable();
 		initView();
@@ -65,9 +68,12 @@ public class KccxActivity extends FrameActivity {
 		listView = (ListView) findViewById(R.id.listView);
 
 		et_search = (EditText) findViewById(R.id.et_search);
-		et_search.setHint("请输入商品名称");
-		from = new String[] { "textView1", "num", "title" };
-		to = new int[] { R.id.textView1, R.id.tv_1, R.id.tv_2 };
+		et_search.setHint("请输入货品名称");
+		from = new String[] {"jgmc_1","hpmc","dqkc" };
+		to = new int[] { R.id.tv_cwmc, R.id.tv_kfmc, R.id.tv_dqkc };
+
+		rg1 = getIntent().getStringExtra("rg1");
+		rg2 = getIntent().getStringExtra("rg2");
 
 		findViewById(R.id.ll_filter).setVisibility(View.VISIBLE);
 	}
@@ -99,14 +105,17 @@ public class KccxActivity extends FrameActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int arg2,
 									long id) {
-
-				ServiceReportCache.setIndex(arg2);
-				if (arg2 >= 0) {
-
-					Intent intent = new Intent(KccxActivity.this,
-							KccxShowActivity.class);
-					startActivity(intent);
+				for(int i=0;i<parent.getChildCount();i++){
+					parent.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.white));
 				}
+				view.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+//				ServiceReportCache.setIndex(arg2);
+//				if (arg2 >= 0) {
+//
+//					Intent intent = new Intent(KccxActivity.this,
+//							KccxShowActivity.class);
+//					startActivity(intent);
+//				}
 
 			}
 		});
@@ -160,10 +169,18 @@ public class KccxActivity extends FrameActivity {
 		if ("query".equals(s) && !backboolean) {
 			try {
 				data = new ArrayList<Map<String, Object>>();
+				data = new ArrayList<Map<String, Object>>();
 				String userid = DataCache.getinition().getUserId();
-				String cs = userid + "*" + userid;
+				String cs,sqlid;
+				if("1".equals(rg2)){
+					sqlid = "_PAD_HPKF_DQBGZ";
+					cs = userid+"*"+rg1;
+				}else{
+					sqlid = "_PAD_HPKF_DQBGZ1";
+					cs = userid+"*"+rg1;
+				}
 				JSONObject jsonObject = callWebserviceImp.getWebServerInfo(
-						"_PAD_HPKF_DQBGZ", cs, "uf_json_getdata", this);
+						sqlid, cs, "uf_json_getdata", this);
 				flag = jsonObject.getString("flag");
 				JSONArray jsonArray = jsonObject.getJSONArray("tableA");
 				if (Integer.parseInt(flag) > 0) {
@@ -173,15 +190,10 @@ public class KccxActivity extends FrameActivity {
 						item.put("num", "");
 						item.put("textView1", getListItemIcon(i));
 						item.put("sqjc", temp.getString("sqjc"));// 上期结存
-						item.put("jgmc_1", temp.getString("jcsj_sczzjg_jgmc_1"));// 仓位名称
+						item.put("jgmc_1", temp.getString("cwmc"));// 仓位名称
 						item.put("dqkc", temp.getString("dqkc"));// 当前库存
-						item.put("hpmc", temp.getString("hpgl_jcsj_hpxxb_hpmc"));// 货品名称
-						item.put("jgmc", temp.getString("jcsj_sczzjg_jgmc"));// 库房名称
-						item.put("jldw", temp.getString("hpgl_jcsj_hpxxb_jldw"));// 单位
-
-						item.put("title", temp.getString("jcsj_sczzjg_jgmc_1")
-								+ "-" + temp.getString("hpgl_jcsj_hpxxb_hpmc")
-								+ "-" + temp.getString("dqkc"));// 单位
+						item.put("hpmc", temp.getString("hpmc"));// 货品名称
+						item.put("jgmc", temp.getString("kfmc"));// 库房名称
 
 						data.add(item);
 					}
@@ -215,7 +227,7 @@ public class KccxActivity extends FrameActivity {
 			try {
 				for (int i = 0; i < data.size(); i++) {
 					Map<String, Object> map = data.get(i);
-					if (((String) map.get("title")).indexOf(name) != -1) {
+					if (((String) map.get("hpmc")).indexOf(name) != -1) {
 						currdata.add(map);
 					}
 				}

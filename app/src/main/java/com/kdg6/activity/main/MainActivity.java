@@ -18,6 +18,7 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -43,7 +44,9 @@ import android.widget.Toast;
 import com.kdg6.R;
 import com.jauker.widget.BadgeView;
 import com.kdg6.activity.FrameActivity;
+import com.kdg6.activity.kc.HpzhActivity;
 import com.kdg6.activity.kc.KccxActivity;
+import com.kdg6.activity.kc.KccxChooseActivity;
 import com.kdg6.activity.kc.KcpdActivity;
 import com.kdg6.activity.kc.KcxxActivity;
 import com.kdg6.activity.kc.SqdActivity;
@@ -84,10 +87,12 @@ import com.kdg6.activity.w.YHKInfoActivity;
 import com.kdg6.activity.w.YhkxxActivity;
 import com.kdg6.cache.DataCache;
 import com.kdg6.cache.ServiceReportCache;
+import com.kdg6.common.Constant;
 import com.kdg6.dodowaterfall.MarqueeTextView;
 import com.kdg6.service.ZddwService;
 import com.kdg6.utils.AppUtils;
 import com.kdg6.utils.Config;
+import com.kdg6.webservice.WebService;
 import com.tencent.android.tpush.XGCustomPushNotificationBuilder;
 import com.tencent.android.tpush.XGIOperateCallback;
 import com.tencent.android.tpush.XGPushManager;
@@ -679,6 +684,11 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 		kc_map.put("name", "外部调拨出库");
 		kc_map.put("img", R.drawable.menu_kc_wbdbck);
 		kc_list.add(kc_map);
+		kc_map = new HashMap<String, Object>();
+		kc_map.put("id", "m_kfgl_hzh");
+		kc_map.put("name", "良品转坏品");
+		kc_map.put("img", R.drawable.menu_kc_wbdbck);
+		kc_list.add(kc_map);
 
 
 
@@ -869,6 +879,8 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 
 		gridview.setVisibility(View.VISIBLE);
 		listview.setVisibility(View.GONE);
+
+//		menu.add("m_kfgl_hzh");
 
 		data_list = new ArrayList<Map<String, Object>>();
 
@@ -1120,8 +1132,12 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 			skipActivity(GzpLrActivity.class);
 			DataCache.getinition().setTitle("工作证录入");
 			return;
+		} else if ("m_kfgl_hzh".equals(menu_type)) {
+			skipActivity(HpzhActivity.class);
+			DataCache.getinition().setTitle("库存-良品转坏品");
+			return;
 		} else if ("m_pad_ckdqkc".equals(menu_type)) {
-			skipActivity(KccxActivity.class);
+			skipActivity(KccxChooseActivity.class);
 			DataCache.getinition().setTitle("库存-当前库存查询");
 			return;
 		} else if ("m_pad_wbdbrk".equals(menu_type)) {
@@ -1352,6 +1368,21 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 				handler.sendMessage(msg);
 			}
 		}
+
+		if ("updateToken".equals(s)) {
+			try {
+				String bbh = getVersion();
+				String brand = android.os.Build.BRAND;
+				String cs = DataCache.getinition().getUserId() + "*PAM*"
+						+ token + "*PAM*" + bbh + "*PAM*" + brand;
+				JSONObject json = callWebserviceImp.getWebServerInfo(
+						"c#_PAD_IOS_TOKEN", cs, "0001", "0001",
+						"uf_json_setdata2", this);
+				System.out.println(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@SuppressLint("NewApi")
@@ -1532,6 +1563,9 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 					break;
 				case 5:
 					changeBackground();
+					break;
+				case Constant.NUM_6:
+//				dialogShowMessage_P(token, null);
 					break;
 			}
 

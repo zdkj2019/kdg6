@@ -12,61 +12,38 @@ import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.DialogInterface.OnClickListener;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.text.InputType;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.SimpleAdapter.ViewBinder;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.support.v4.content.FileProvider;
 
 import com.kdg6.R;
 import com.kdg6.activity.login.LoginActivity;
-import com.kdg6.activity.util.ImgChoose;
-import com.kdg6.activity.util.ImgGridViewUtil;
 import com.kdg6.activity.util.ImgPz;
 import com.kdg6.cache.DataCache;
 import com.kdg6.common.Constant;
 import com.kdg6.definition.Sign;
-import com.kdg6.utils.ImageUtil;
 import com.kdg6.webservice.CallWebserviceImp;
 
 @SuppressLint("SimpleDateFormat")
@@ -219,6 +196,20 @@ public abstract class FrameActivity extends BaseActivity implements Sign {
 		}
 		return userid;
 	}
+
+    protected String getVersion() {
+        try {
+            // 获取packagemanager的实例
+            PackageManager packageManager = getPackageManager();
+            // getPackageName()是你当前类的包名，0代表是获取版本信息
+            PackageInfo packInfo = packageManager.getPackageInfo(
+                    getPackageName(), 0);
+            return packInfo.versionName;
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return null;
+    }
 
 	// protected void showDateDialog(String title, final Class<?> cls) {
 	// final TextView start, end;

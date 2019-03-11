@@ -498,15 +498,17 @@ public class LoginActivity extends Activity {
 
 	}
 
-	public boolean isrepeatlogin = false;
 	private Handler handler = new Handler() {
 
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
+			if(progressDialog!=null){
+				progressDialog.dismiss();
+			}
 			switch (msg.what) {
 				case Constant.NETWORK_ERROR:
-					Toast.makeText(getApplicationContext(),"网络连接失败，请检查网络连接是否正常！",Toast.LENGTH_SHORT);
+					Toast.makeText(LoginActivity.this,"网络连接失败，请检查网络连接是否正常！",Toast.LENGTH_LONG).show();;
 					break;
 				case Constant.SUCCESS:
 					Intent intent = new Intent(getApplicationContext(),MainActivity.class);
@@ -514,21 +516,19 @@ public class LoginActivity extends Activity {
 					break;
 				case Constant.FAIL:
 					if (flag_DL.equals("4")) {
-						Toast.makeText(getApplicationContext(),"你密码输入错误3次,帐号已锁定,请联系管理员解锁!",Toast.LENGTH_SHORT);
+						Toast.makeText(LoginActivity.this,"你密码输入错误3次,帐号已锁定,请联系管理员解锁!",Toast.LENGTH_LONG).show();;
 					} else {
-						Toast.makeText(getApplicationContext(),"请输入正确的密码!输入密码错误超过3次,系统将锁定帐号",Toast.LENGTH_SHORT);
+						Toast.makeText(LoginActivity.this,"请输入正确的密码!输入密码错误超过3次,系统将锁定帐号",Toast.LENGTH_LONG).show();;
 					}
 					break;
 				case Constant.NUM_7:
-					Toast.makeText(getApplicationContext(),"没有菜单权限，请联系管理员！",Toast.LENGTH_SHORT);
+					Toast.makeText(LoginActivity.this,"没有菜单权限，请联系管理员！",Toast.LENGTH_LONG).show();;
 					break;
 				case Constant.NUM_6:
-					Toast.makeText(getApplicationContext(),"账号或密码不为空！",Toast.LENGTH_SHORT);
+					Toast.makeText(LoginActivity.this,"账号或密码不为空！",Toast.LENGTH_LONG).show();;
 					break;
 			}
-			if(progressDialog!=null){
-				progressDialog.dismiss();
-			}
+
 		}
 
 	};

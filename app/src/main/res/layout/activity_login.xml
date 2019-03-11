@@ -210,7 +210,7 @@
                     android:paddingLeft="10dip"
                     android:paddingRight="10dip"
                     android:text="设置"
-                    android:textColor="@color/white" 
+                    android:textColor="@color/white"
                     android:visibility="gone"/>
             </LinearLayout>
         </LinearLayout>

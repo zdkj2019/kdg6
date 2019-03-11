@@ -9,6 +9,18 @@ android {
         useLibrary 'org.apache.http.legacy'
         minSdkVersion 19
         targetSdkVersion 28
+
+        ndk {
+            //根据需要 自行选择添加的对应cpu类型的.so库。
+            abiFilters 'armeabi'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64', 'armeabi-v7a', 'arm64-v8a'
+        }
+
+        manifestPlaceholders = [
+
+                XG_ACCESS_ID:"2100318785",
+                XG_ACCESS_KEY:"A3DWG4V6B94F"
+        ]
     }
 
     buildTypes {
@@ -24,12 +36,20 @@ dependencies {
     implementation files('libs/badgeview.jar')
     implementation files('libs/BaiduLBS_Android.jar')
     implementation files('libs/commons-httpclient-3.0.1.jar')
+    implementation files('libs/commons-logging-1.2.jar')
+    implementation files('libs/commons-codec-1.9.jar')
     implementation files('libs/core-3.0.0.jar')
     implementation files('libs/GifView.jar')
-    implementation files('libs/jg_filter_sdk_1.1.jar')
     implementation files('libs/ksoap2-android-assembly-3.3.0-jar-with-dependencies.jar')
-    implementation files('libs/mid-core-sdk-4.0.6.jar')
     implementation files('libs/universal-image-loader-1.9.5.jar')
-    implementation files('libs/wup-1.0.0.E-SNAPSHOT.jar')
-    implementation files('libs/Xg_sdk_v3.2.2_20180116_1704.jar')
+
+    //信鸽普通版本jar，不包含厂商通道
+    implementation  'com.tencent.xinge:xinge:4.0.5-release'
+    //implementation'com.tencent.xinge:xinge:4.3.1-beta'
+    //jg包
+    implementation'com.tencent.jg:jg:1.1'
+    //wup包
+    implementation 'com.tencent.wup:wup:1.0.0.E-release'
+    //mid包，minSdkVersion 14
+    implementation 'com.tencent.mid:mid:4.0.7-Release'
 }

@@ -3,7 +3,7 @@
     package="com.kdg6"
     android:installLocation="internalOnly"
     android:versionCode="2"
-    android:versionName="1.21" >
+    android:versionName="1.22" >
 
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -35,6 +35,7 @@
     <application
         android:icon="@drawable/logo"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:persistent="true"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -129,6 +130,22 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.kdg6.activity.esp.ChooseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name="com.kdg6.activity.kc.HpzhActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.kdg6.activity.kc.HpzhMxActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.kdg6.activity.kc.KccxChooseActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" >
         </activity>
@@ -477,24 +494,7 @@
 
         <!-- 【必须】 信鸽receiver广播接收 -->
         <meta-data android:name="com.tencent.rdm.uuid" android:value="0a60aea84b703b5dc6532ab848b1a2ee" />
-        <!-- 【必须】 信鸽receiver广播接收 -->
-        <receiver
-            android:name="com.tencent.android.tpush.XGPushReceiver"
-            android:process=":xg_service_v3" >
-            <intent-filter android:priority="0x7fffffff" >
 
-                <!-- 【必须】 信鸽SDK的内部广播 -->
-                <action android:name="com.tencent.android.tpush.action.SDK" />
-                <action android:name="com.tencent.android.tpush.action.INTERNAL_PUSH_MESSAGE" />
-                <!-- 【必须】 系统广播：开屏和网络切换 -->
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-                <!-- 【可选】 一些常用的系统广播，增强信鸽service的复活机会，请根据需要选择。当然，你也可以添加APP自定义的一些广播让启动service -->
-                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-            </intent-filter>
-        </receiver>
 
         <receiver
             android:name="com.kdg6.receiver.MessageReceiver"
@@ -507,63 +507,6 @@
                 <action android:name="com.tencent.android.tpush.action.FEEDBACK" />
             </intent-filter>
         </receiver>
-
-        <!-- 【注意】 如果被打开的activity是启动模式为SingleTop，SingleTask或SingleInstance，请根据通知的异常自查列表第8点处理 -->
-        <activity
-            android:name="com.tencent.android.tpush.XGPushActivity"
-            android:exported="false" >
-            <intent-filter>
-
-                <!-- 若使用AndroidStudio，请设置android:name="android.intent.action" -->
-                <action android:name="android.intent.action" />
-            </intent-filter>
-        </activity>
-
-        <!-- 【必须】 信鸽service -->
-        <service
-            android:name="com.tencent.android.tpush.service.XGPushServiceV3"
-            android:exported="true"
-            android:persistent="true"
-            android:process=":xg_service_v3" />
-
-        <!-- 【必须】 提高service的存活率 -->
-        <service
-            android:name="com.tencent.android.tpush.rpc.XGRemoteService"
-            android:exported="true" >
-            <intent-filter>
-
-                <!-- 【必须】 请修改为当前APP包名 .PUSH_ACTION, 如demo的包名为：com.qq.xgdemo -->
-                <action android:name="com.kdg6.PUSH_ACTION" />
-            </intent-filter>
-        </service>
-
-        <!-- 【必须】 【注意】authorities修改为 包名.AUTH_XGPUSH, 如demo的包名为：com.qq.xgdemo -->
-        <provider
-            android:name="com.tencent.android.tpush.XGPushProvider"
-            android:authorities="com.kdg6.AUTH_XGPUSH"
-            android:exported="true" />
-
-        <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER, 如demo的包名为：com.qq.xgdemo -->
-        <provider
-            android:name="com.tencent.android.tpush.SettingsContentProvider"
-            android:authorities="com.kdg6.TPUSH_PROVIDER"
-            android:exported="false" />
-
-        <!-- 【必须】 【注意】authorities修改为 包名.TENCENT.MID.V3, 如demo的包名为：com.qq.xgdemo -->
-        <provider
-            android:name="com.tencent.mid.api.MidProvider"
-            android:authorities="com.kdg6.TENCENT.MID.V3"
-            android:exported="true" >
-        </provider>
-
-        <!-- 【必须】 请将YOUR_ACCESS_ID修改为APP的AccessId，“21”开头的10位数字，中间没空格 -->
-        <meta-data
-            android:name="XG_V2_ACCESS_ID"
-            android:value="2100318785" />
-        <!-- 【必须】 请将YOUR_ACCESS_KEY修改为APP的AccessKey，“A”开头的12位字符串，中间没空格 -->
-        <meta-data
-            android:name="XG_V2_ACCESS_KEY"
-            android:value="A3DWG4V6B94F" />
 
 
         <!-- 如果你的app支持android7.0及以上，那么在android apk的时候临时给app授权访问文件的权限 -->
